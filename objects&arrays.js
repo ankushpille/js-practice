@@ -15,6 +15,11 @@ const obj = {
     city:'hydrebad'
 }
 
-const{name1,firstname} = obj
+// const{name1,firstname} = obj
 
-console.log("name,firstname",name1,firstname)
+// console.log("name,firstname",name1,firstname)
+
+
+//rename values
+const{name1: newname,firstname} = obj
+console.log(newname,firstname);
