@@ -8,3 +8,13 @@ const [x,,z] = [10,20,30]
 console.log(z)
 
 
+//object desstructuring
+const obj = {
+    name1: 'ankush',
+    firstname: 'pille',
+    city:'hydrebad'
+}
+
+const{name1,firstname} = obj
+
+console.log("name,firstname",name1,firstname)
