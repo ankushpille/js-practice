@@ -31,3 +31,9 @@ console.log(newname,firstname);1
  let d1 = Array.from(1, 2, 3, 4, 5);
  console.log(a1, b1, c1, d1);
 
+ //accessing elements in array
+ let arr1 = [1,2,3,4,5];
+    console.log(arr1[0]); // 1
+    console.log(arr1[1]); // 2
+    console.log(arr1[arr1.length - 1]); // 5
+
