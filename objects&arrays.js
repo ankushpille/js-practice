@@ -22,13 +22,13 @@ const obj = {
 
 //rename values
 const{name1: newname,firstname} = obj
-console.log(newname,firstname);1
+console.log(newname,firstname);
 
 //creating arrays 
  let a1 = [1, 2, 3];
  let b1 = [4, 5, 6];
  let c1 = Array.of(1, 2, 3);
- let d1 = Array.from(1, 2, 3, 4, 5);
+ let d1 = Array(5).fill(0); // creates an array of length 5 filled with 0
  console.log(a1, b1, c1, d1);
 
  //accessing elements in array
@@ -37,3 +37,9 @@ console.log(newname,firstname);1
     console.log(arr1[1]); // 2
     console.log(arr1[arr1.length - 1]); // 5
 
+//modifying elements in array
+let arr2 = [1,2,3,4,5];
+arr2[0] = 10;
+arr2[1] = 20;
+arr2[arr2.length - 1] = 50;
+console.log(arr2);
