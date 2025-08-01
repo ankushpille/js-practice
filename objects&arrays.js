@@ -22,4 +22,12 @@ const obj = {
 
 //rename values
 const{name1: newname,firstname} = obj
-console.log(newname,firstname);
+console.log(newname,firstname);1
+
+//creating arrays 
+ let a1 = [1, 2, 3];
+ let b1 = [4, 5, 6];
+ let c1 = Array.of(1, 2, 3);
+ let d1 = Array.from(1, 2, 3, 4, 5);
+ console.log(a1, b1, c1, d1);
+
