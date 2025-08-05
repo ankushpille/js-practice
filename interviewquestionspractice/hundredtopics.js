@@ -136,8 +136,8 @@
 
 // person.greet();
 
-let a = 'ankush'
- let splitA = a.split("")
+// let a = 'ankush'
+//  let splitA = a.split("")
 // let reverse = []
 // for(let i=a.length-1; i>=0; i--){
 //     reverse.push(a[i])
@@ -145,6 +145,36 @@ let a = 'ankush'
 // console.log(reverse.join(''))
 
 // console.log(splitA.reverse().join(''))
+
+//✅ Write map() manually using forEach.
+// function custommap(array, callback) {
+//   let result = [];
+
+//   array.forEach((item, index) => {
+//     const transformed = callback(item, index, array);
+//     result.push(transformed);
+//   });
+//   return result;
+// }
+
+
+
+function custommap(array,callback){
+    let result = []
+    array.forEach((item,index) => {
+       let transformed = callback(item,index,array)
+       result.push(transformed)
+    })
+    return result
+}
+
+// let numbers = [1,2,3];
+// const doubled = custommap(numbers, (item) => {
+//    return item *2
+// })
+
+// console.log(doubled)
+
 
 
 
