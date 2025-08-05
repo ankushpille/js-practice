@@ -127,14 +127,24 @@
 // }
 
 // ✅ What is the this keyword? Try logging this inside a method.
-const person = { 
-    name: "ankush",
-        greet : () => {
-          console.log(this.name)
-        }
-}
+// const person = { 
+//     name: "ankush",
+//         greet : () => {
+//           console.log(this.name)
+//         }
+// }
 
-person.greet();
+// person.greet();
+
+let a = 'ankush'
+ let splitA = a.split("")
+// let reverse = []
+// for(let i=a.length-1; i>=0; i--){
+//     reverse.push(a[i])
+// }
+// console.log(reverse.join(''))
+
+// console.log(splitA.reverse().join(''))
 
 
 
