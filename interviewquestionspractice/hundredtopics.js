@@ -38,3 +38,13 @@
 //tdz cannot access before intialiazation
 // console.log(c)
 // const c = 40;
+
+
+// ✅ Check if a value is an array without using Array.isArray().
+// let a = [1,2,3,4,5]
+
+// function isArray(a){
+//    return Object.prototype.toString.call(a) == '[object Array]'
+// }
+
+// console.log(isArray(a));
