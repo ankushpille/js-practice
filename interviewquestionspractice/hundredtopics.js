@@ -210,15 +210,45 @@ let a = [1,1,2,2,3,4]
 
 
 //✅ Write a simple Promise that resolves after 2 seconds.
-const promise = new Promise((resolve,reject) => {
-    setTimeout(() => {
-        resolve("promise resolved")
-    },2000)
+// const promise = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//         resolve("promise resolved")
+//     },2000)
+// })
+
+// promise.then((message) => {
+//    console.log(message)
+// })
+
+function fetchuser(callback){
+   setTimeout(() => {
+      callback("data loaded successfully")
+   },1000)
+}
+
+// console.log(fetchuser((data) =>{
+//     console.log(data);
+// })
+function getpromisedata(){
+    let success = true
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+             if(success){
+            resolve("data loaded successfully")
+        }else{
+            reject("data not loaded")
+        }
+        },1000)
+    })
+}
+
+getpromisedata().then((data) => {
+   console.log(data)
+}).catch((err) => {
+    console.log(err)
 })
 
-promise.then((message) => {
-   console.log(message)
-})
+
 
 
 
