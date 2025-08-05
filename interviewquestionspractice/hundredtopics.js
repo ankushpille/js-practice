@@ -220,34 +220,41 @@ let a = [1,1,2,2,3,4]
 //    console.log(message)
 // })
 
-function fetchuser(callback){
-   setTimeout(() => {
-      callback("data loaded successfully")
-   },1000)
-}
+// function fetchuser(callback){
+//    setTimeout(() => {
+//       callback("data loaded successfully")
+//    },1000)
+// }
 
-// console.log(fetchuser((data) =>{
-//     console.log(data);
+// // console.log(fetchuser((data) =>{
+// //     console.log(data);
+// // })
+// function getpromisedata(){
+//     let success = true
+//     return new Promise((resolve,reject) => {
+//         setTimeout(() => {
+//              if(success){
+//             resolve("data loaded successfully")
+//         }else{
+//             reject("data not loaded")
+//         }
+//         },1000)
+//     })
+// }
+
+// getpromisedata().then((data) => {
+//    console.log(data)
+// }).catch((err) => {
+//     console.log(err)
 // })
-function getpromisedata(){
-    let success = true
-    return new Promise((resolve,reject) => {
-        setTimeout(() => {
-             if(success){
-            resolve("data loaded successfully")
-        }else{
-            reject("data not loaded")
-        }
-        },1000)
-    })
+
+const fetchUser = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const data = await response.json();
+    console.log(data);
 }
 
-getpromisedata().then((data) => {
-   console.log(data)
-}).catch((err) => {
-    console.log(err)
-})
-
+fetchUser();
 
 
 
