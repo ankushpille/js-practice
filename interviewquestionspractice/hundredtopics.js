@@ -195,19 +195,30 @@
 let a = [1,1,2,2,3,4]
 // let newArr = new Set([...a])
 // console.log(newArr)
-const obj = {}
-let unique = []
-for(let i=0; i<a.length; i++){
-    if(obj[a[i]]){
+// const obj = {}
+// let unique = []
+// for(let i=0; i<a.length; i++){
+//     if(obj[a[i]]){
 
-    }else{
-        obj[a[i]] = true
-        unique.push(a[i])
-    }
-}
+//     }else{
+//         obj[a[i]] = true
+//         unique.push(a[i])
+//     }
+// }
 
-console.log(unique)
+// console.log(unique)
 
+
+//✅ Write a simple Promise that resolves after 2 seconds.
+const promise = new Promise((resolve,reject) => {
+    setTimeout(() => {
+        resolve("promise resolved")
+    },2000)
+})
+
+promise.then((message) => {
+   console.log(message)
+})
 
 
 
