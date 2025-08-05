@@ -66,23 +66,38 @@
 // ✅ How to clone an object (shallow copy and deep copy)?
 
 
-const bag = {
-    bag: 5,
-    pencilebox:{
-        pencils: 2,
-        pen:1
-    }
-}
+// const bag = {
+//     bag: 5,
+//     pencilebox:{
+//         pencils: 2,
+//         pen:1
+//     }
+// }
 
-// const shallowcopy = {...bag}
-// copy.pencilebox.pencils = 10;
-// console.log(copy)
+// // const shallowcopy = {...bag}
+// // copy.pencilebox.pencils = 10;
+// // console.log(copy)
 
-//deepcopy
-const deepcopy =JSON.parse(JSON.stringify(bag))
-deepcopy.pencilebox.pencils = 20
-console.log(bag)
-console.log(deepcopy)
+// //deepcopy
+// const deepcopy =JSON.parse(JSON.stringify(bag))
+// deepcopy.pencilebox.pencils = 20
+// console.log(bag)
+// console.log(deepcopy)
+
+// //closures
+// function outerfunction(){
+//     let count = 0;
+//     function innerfunction(){
+//         count = count +1
+//        return count;
+//     }
+//     return innerfunction;
+// }
+
+// const counter = outerfunction();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
 
 
 
