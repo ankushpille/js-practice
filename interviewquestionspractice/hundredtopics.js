@@ -191,7 +191,22 @@
 // let flatedArray = a.flat(2)
 // console.log(flatedArray)
 
+//✅ Remove duplicates from an array.
+let a = [1,1,2,2,3,4]
+// let newArr = new Set([...a])
+// console.log(newArr)
+const obj = {}
+let unique = []
+for(let i=0; i<a.length; i++){
+    if(obj[a[i]]){
 
+    }else{
+        obj[a[i]] = true
+        unique.push(a[i])
+    }
+}
+
+console.log(unique)
 
 
 
