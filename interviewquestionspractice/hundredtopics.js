@@ -62,3 +62,27 @@
 // let a = '2'
 
 // console.log(typeof(Number(a)))
+
+// ✅ How to clone an object (shallow copy and deep copy)?
+
+
+const bag = {
+    bag: 5,
+    pencilebox:{
+        pencils: 2,
+        pen:1
+    }
+}
+
+// const shallowcopy = {...bag}
+// copy.pencilebox.pencils = 10;
+// console.log(copy)
+
+//deepcopy
+const deepcopy =JSON.parse(JSON.stringify(bag))
+deepcopy.pencilebox.pencils = 20
+console.log(bag)
+console.log(deepcopy)
+
+
+
