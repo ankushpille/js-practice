@@ -99,5 +99,21 @@
 // console.log(counter());
 // console.log(counter());
 
+//normal function
+// function add(a,b){
+//     return a +b
+// }
+// console.log(add(2,3))
+
+//function currying
+function add(a){
+    return function(b){
+        return a + b
+    }
+}
+
+console.log(add(2)(3))
+
+
 
 
