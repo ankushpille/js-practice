@@ -57,3 +57,8 @@
 // }else{
 //     console.log('it is not matching')
 // }
+
+// // ✅ Convert a string to a number without parseInt.
+// let a = '2'
+
+// console.log(typeof(Number(a)))
