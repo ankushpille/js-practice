@@ -48,3 +48,12 @@
 // }
 
 // console.log(isArray(a));
+
+//diffrence between == and ===
+// let a = '2'
+
+// if(2===a){
+//     console.log("it is 2")
+// }else{
+//     console.log('it is not matching')
+// }
