@@ -106,13 +106,25 @@
 // console.log(add(2,3))
 
 //function currying
-function add(a){
-    return function(b){
-        return a + b
-    }
-}
+// function add(a){
+//     return function(b){
+//         return a + b
+//     }
+// }
 
-console.log(add(2)(3))
+// console.log(add(2)(3))
+
+//hoisting in javascripts
+// console.log(a());
+// function a(){
+//     return "ankush"
+// }
+
+//funtion expression is not hoisted 
+console.log(a());
+const a = () => {
+    return "ankush"
+}
 
 
 
