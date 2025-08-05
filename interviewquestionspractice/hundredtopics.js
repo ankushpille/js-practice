@@ -120,11 +120,23 @@
 //     return "ankush"
 // }
 
-//funtion expression is not hoisted 
-console.log(a());
-const a = () => {
-    return "ankush"
+// //funtion expression is not hoisted 
+// console.log(a());
+// const a = () => {
+//     return "ankush"
+// }
+
+// ✅ What is the this keyword? Try logging this inside a method.
+const person = { 
+    name: "ankush",
+        greet : () => {
+          console.log(this.name)
+        }
 }
+
+person.greet();
+
+
 
 
 
