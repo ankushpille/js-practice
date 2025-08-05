@@ -159,14 +159,14 @@
 
 
 
-function custommap(array,callback){
-    let result = []
-    array.forEach((item,index) => {
-       let transformed = callback(item,index,array)
-       result.push(transformed)
-    })
-    return result
-}
+// function custommap(array,callback){
+//     let result = []
+//     array.forEach((item,index) => {
+//        let transformed = callback(item,index,array)
+//        result.push(transformed)
+//     })
+//     return result
+// }
 
 // let numbers = [1,2,3];
 // const doubled = custommap(numbers, (item) => {
@@ -174,6 +174,22 @@ function custommap(array,callback){
 // })
 
 // console.log(doubled)
+
+// let a = [1,2,3]
+
+// const sum = () => {
+//    return a.reduce((acc,cur) => {
+//         return acc + cur
+// },0)
+// }
+
+// console.log(sum(a));
+
+//✅ Flatten a nested array [1, [2, [3, 4]]] to [1, 2, 3, 4].
+
+// let a = [1, [2, [3, 4]]] 
+// let flatedArray = a.flat(2)
+// console.log(flatedArray)
 
 
 
