@@ -192,7 +192,7 @@
 // console.log(flatedArray)
 
 //✅ Remove duplicates from an array.
-let a = [1,1,2,2,3,4]
+// let a = [1,1,2,2,3,4]
 // let newArr = new Set([...a])
 // console.log(newArr)
 // const obj = {}
@@ -248,13 +248,40 @@ let a = [1,1,2,2,3,4]
 //     console.log(err)
 // })
 
-const fetchUser = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users")
-    const data = await response.json();
-    console.log(data);
+// const fetchUser = async () => {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users")
+//     const data = await response.json();
+//     console.log(data);
+// }
+
+// fetchUser();
+
+//  a = {};
+// let b = a;
+// a = null;
+// console.log(b); // ?
+
+const person = {
+    name : "ankush"
 }
 
-fetchUser();
+function greeting(greeting,age){
+    console.log(`${this.name} ${"hey"} ${greeting},${age}`)
+}
+
+// // greeting.call(person);
+// greeting.apply(person,["hi","25"])
+
+const newGreet = greeting.bind(person,"hi","28");
+newGreet();
+
+
+
+
+
+
+
+
 
 
 
