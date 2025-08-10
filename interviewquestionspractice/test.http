@@ -7,3 +7,6 @@ Authorization: Bearer 12346
     "name": "John Doe",
     "email": "john.doe@example.com"
 }
+
+
+GET http://localhost:3000/hello

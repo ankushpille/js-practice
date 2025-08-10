@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const cors = require('cors')
 
 app.use(express.json());  // Add this line to parse JSON bodies
+app.use(cors());  // Enable CORS for all routes
+
 
 function authorize(req,res,next){
     const authHeader = req.headers.authorization;
@@ -18,7 +21,7 @@ function authorize(req,res,next){
    }
 }
 
-app.get('/', (req,res) => {
+app.get('/hello', (req,res) => {
     res.send('Hello world');
 })
 
