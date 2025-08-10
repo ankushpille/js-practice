@@ -304,17 +304,29 @@ process.nextTick(() => {
     console.log("hello next tick")
 })
 
-//common js module
-const fs = require('fs');
-const path = require('path');
+// //common js module
+// const fs = require('fs');
+// const path = require('path');
 
-fs.readFile(path.join(__dirname, 'file.txt'), 'utf8',(err,data) => {
+// fs.readFile(path.join(__dirname, 'file.txt'), 'utf8',(err,data) => {
+//     if(err){
+//         console.log("error reading file",err);
+//     }else{
+//         console.log("file content",data);
+//     }
+// })
+
+import fs from 'fs';
+import path from 'path'
+
+fs.readFile(path.join(import.meta.dirname), 'file.txt'),'utf8',(err,data) => {
     if(err){
         console.log("error reading file",err);
-    }else{
+    }
+    else{
         console.log("file content",data);
     }
-})
+}
 
 
 
