@@ -1,12 +1,20 @@
+# POST http://localhost:3000/login
+# Content-Type: application/json
 
-POST http://localhost:3000/user 
+# {
+#     "username": "ankush",
+#     "password": "12345"
+# }
+
+
+POST http://localhost:3000/user
 Content-Type: application/json
-Authorization: Bearer 12346
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFua3VzaCIsImlhdCI6MTc1NDgzNDQ2OCwiZXhwIjoxNzU0ODM4MDY4fQ.6L698AqUJgYUqpU0pgR4DzHKlvpUvmssG_RqA4UXvjA
 
 {
-    "name": "John Doe",
-    "email": "john.doe@example.com"
+    "name": "Ankush",
+    "email": "ankush@example.com"
 }
 
 
-GET http://localhost:3000/hello
+
