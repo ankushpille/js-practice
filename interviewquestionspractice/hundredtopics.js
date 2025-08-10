@@ -261,19 +261,50 @@
 // a = null;
 // console.log(b); // ?
 
-const person = {
-    name : "ankush"
-}
+// const person = {
+//     name : "ankush"
+// }
 
-function greeting(greeting,age){
-    console.log(`${this.name} ${"hey"} ${greeting},${age}`)
-}
+// function greeting(greeting,age){
+//     console.log(`${this.name} ${"hey"} ${greeting},${age}`)
+// }
 
-// // greeting.call(person);
-// greeting.apply(person,["hi","25"])
+// // // greeting.call(person);
+// // greeting.apply(person,["hi","25"])
 
-const newGreet = greeting.bind(person,"hi","28");
-newGreet();
+// const newGreet = greeting.bind(person,"hi","28");
+// newGreet();
+
+
+// function debounce(func,delay){
+//     let timeout;
+
+//     return function(){
+//         clearTimeout(timeout);
+//         timeout = setTimeout(() => {
+//             func();
+//         },delay)
+//     }
+// }
+
+// function sayHello(){
+//     console.log("hello example for debouncing")
+// }
+
+// const debouncedfunction = debounce(sayHello,1000)
+// debouncedfunction();
+
+setTimeout(() => {
+    console.log("hello world")
+},0)
+setImmediate(() => {
+     console.log("hello immediate")
+})
+process.nextTick(() => {
+    console.log("hello next tick")
+})
+
+
 
 
 
