@@ -1,6 +1,7 @@
 
 POST http://localhost:3000/user 
 Content-Type: application/json
+Authorization: Bearer 12346
 
 {
     "name": "John Doe",
