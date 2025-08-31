@@ -53,3 +53,15 @@ for(let i=0; i<5; i++){
 }
 
 test()
+
+
+let obj1 = {
+    id:10,
+    company: "GFG"
+}
+
+var obj2 = {...obj1};
+obj2.id = 20;
+
+console.log(obj1.id);
+console.log(obj2.id)
