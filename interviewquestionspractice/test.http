@@ -7,13 +7,24 @@
 # }
 
 
-POST http://localhost:3000/user
+# POST http://localhost:3000/user
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFua3VzaCIsImlhdCI6MTc1NDgzNDQ2OCwiZXhwIjoxNzU0ODM4MDY4fQ.6L698AqUJgYUqpU0pgR4DzHKlvpUvmssG_RqA4UXvjA
+
+# {
+#     "name": "Ankush",
+#     "email": "ankush@example.com"
+# }
+
+
+POST http://localhost:3000/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFua3VzaCIsImlhdCI6MTc1NDgzNDQ2OCwiZXhwIjoxNzU0ODM4MDY4fQ.6L698AqUJgYUqpU0pgR4DzHKlvpUvmssG_RqA4UXvjA
 
 {
-    "name": "Ankush",
-    "email": "ankush@example.com"
+  "name": "iPad",
+  "price": 1500,
+  "stock": 8
+
 }
 
 

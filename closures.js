@@ -65,3 +65,15 @@ obj2.id = 20;
 
 console.log(obj1.id);
 console.log(obj2.id)
+
+
+function checkPalindrome(str){
+    const newrev = str.split('').reverse().join('');
+    if(newrev == str){
+        console.log("palindrome")
+    }else{
+        console.log("not palindrome")
+    }
+}
+
+checkPalindrome("madam");
