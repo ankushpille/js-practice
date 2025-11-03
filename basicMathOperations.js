@@ -29,4 +29,9 @@ console.log((123.456).toFixed(1));
 console.log(parseInt('10'));
 console.log(parseInt('10.5'))
 
+console.log(Number.isInteger(9))
+console.log(Number.isInteger(9.5))
+
+//returns true if value is not a number
+console.log(Number.isNaN(22))
 
