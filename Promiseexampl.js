@@ -18,3 +18,20 @@ async function handlePromise(){
 }
 
 handlePromise()
+
+
+console.log("start")
+
+process.nextTick(() => {
+    console.log("hello processnextTick")
+})
+
+setTimeout(() => {
+    console.log("hello setTimeout 1ms")
+},1000)
+
+setImmediate(() => {
+    console.log("hello setImmediate")
+})
+
+console.log("end")
