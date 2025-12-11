@@ -40,3 +40,16 @@ for(let i=0; i<arr.length; i++){
 
 console.log(count);
 
+//Remove duplicates from an array.
+ arr = [1, 2, 2, 3]
+let result1 = [];
+
+for(let i=0; i<arr.length; i++){
+    if(!result1.includes(arr[i])){
+        result1.push(arr[i])
+    }
+}
+
+console.log(result1);
+
+
