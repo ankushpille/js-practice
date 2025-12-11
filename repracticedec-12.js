@@ -26,3 +26,17 @@ for (let i = 0; i < arr.length; i++) {
   sum = sum + arr[i];
 }
 console.log(sum);
+
+
+arr = [1, 2, 2, 3, 2]
+let num = 2;
+
+let count = 0;
+for(let i=0; i<arr.length; i++){
+    if(arr[i] === num){
+        count = count + 1;
+    }
+}
+
+console.log(count);
+
