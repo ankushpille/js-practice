@@ -52,4 +52,12 @@ for(let i=0; i<arr.length; i++){
 
 console.log(result1);
 
+//Reverse an array without using reverse().
+ arr = [1, 2, 3]
+let result2 = []
+for(let i=arr.length-1; i>=0; i--){
+    result2.push(arr[i])
+}
+
+console.log(result2);
 
