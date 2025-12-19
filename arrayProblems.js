@@ -8,3 +8,6 @@ for(let i=0; i<arr.length; i++){
 arr = [10, 20, 30]
 let length = arr.length-1
 console.log(arr[0],arr[length]);
+
+arr = [5, 8, 2, 9]
+console.log(arr.length);
