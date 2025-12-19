@@ -9,3 +9,4 @@ const doubledArray = numbers.map((num) => {
 })
 
 console.log(doubledArray);
+
