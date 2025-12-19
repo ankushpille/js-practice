@@ -11,3 +11,10 @@ console.log(arr[0],arr[length]);
 
 arr = [5, 8, 2, 9]
 console.log(arr.length);
+
+arr = [7, 3, 9, 1,4,2]
+for(let i=0; i<arr.length; i++){
+    if(arr[i] %2 ==0){
+        console.log("even number",arr[i])
+    }
+}
