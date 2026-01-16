@@ -40,3 +40,15 @@ var reverse = function (x) {
   if (rev > High) return 0;
   return rev;
 };
+
+var checkPerfectNumber = function (num) {
+  let sumOfDivisors = 0;
+
+  for (let d = 1; d < num; d++) {
+    if (num % d === 0) {
+      sumOfDivisors += d;
+    }
+  }
+
+  return sumOfDivisors === num;
+};
