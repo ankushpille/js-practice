@@ -63,3 +63,29 @@ var findGCD = function (nums) {
 
   return gcd(min, max);
 };
+
+function gcd(a, b) {
+  if (b === 0) return a;
+  return gcd(b, a % b);
+}
+
+function findGcdOfArray(a) {
+  if (a.length < 0) return 0;
+  if (a.length === 1) return a[0];
+
+  let g = gcd(a[0], a[1]);
+  for (let e of a) {
+    g = gcd(g, e);
+  }
+
+  return g;
+}
+var hasGroupsSizeX = function (deck) {
+  let freq = {};
+  for (let e of deck) {
+    freq[e] = (freq[e] ?? 0) + 1;
+  }
+  let vals = [...Object.values(freq)];
+  let g = findGcdOfArray(vals);
+  return g > 1;
+};
