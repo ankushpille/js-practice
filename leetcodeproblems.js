@@ -89,3 +89,21 @@ var hasGroupsSizeX = function (deck) {
   let g = findGcdOfArray(vals);
   return g > 1;
 };
+
+var minimumBoxes = function (apples, capacities) {
+  let appleCount = apples.reduce((sum, x) => sum + x, 0);
+  capacities.sort((a, b) => b - a);
+
+  let usedBoxes = 0;
+  while (appleCount > 0) {
+    let boxCap = capacities.shift();
+    usedBoxes++;
+    if (appleCount > boxCap) {
+      appleCount -= boxCap;
+    } else {
+      appleCount = 0;
+    }
+  }
+
+  return usedBoxes;
+};
