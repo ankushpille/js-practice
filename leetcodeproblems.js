@@ -123,3 +123,19 @@ var minimumChairs = function (s) {
 
   return max;
 };
+
+var addDigits = function (num) {
+  while (1) {
+    let s = "" + num;
+    if (s.length === 1) break;
+
+    let sum = 0;
+    for (let ch of s) {
+      sum += +ch;
+    }
+
+    num = sum;
+  }
+
+  return num;
+};
