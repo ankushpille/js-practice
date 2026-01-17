@@ -107,3 +107,19 @@ var minimumBoxes = function (apples, capacities) {
 
   return usedBoxes;
 };
+
+var minimumChairs = function (s) {
+  let stack = [];
+  let max = 0;
+
+  for (let ch of s) {
+    if (ch === "E") {
+      stack.push(ch);
+      max = Math.max(max, stack.length);
+    } else if (ch === "L") {
+      stack.pop();
+    }
+  }
+
+  return max;
+};
