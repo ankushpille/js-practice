@@ -139,3 +139,23 @@ var addDigits = function (num) {
 
   return num;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var averageValue = function (nums) {
+  let sum = 0;
+  let count = 0;
+  for (let e of nums) {
+    if (e % 2 === 0) {
+      if (e % 3 === 0) {
+        sum = sum + e;
+        count = count + 1;
+      }
+    }
+  }
+  if (count === 0) return 0;
+  let average = sum / count;
+  return Math.trunc(average);
+};
