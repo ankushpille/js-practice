@@ -195,3 +195,39 @@ var checkDivisibility = function (n) {
   let sum = sod + pod;
   return n % sum === 0;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+function isPrime(n) {
+  if (n <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function getfrequency(a) {
+  let freq = {};
+
+  for (let e of a) {
+    freq[e] = (freq[e] ?? 0) + 1;
+  }
+  return freq;
+}
+
+var checkPrimeFrequency = function (nums) {
+  let freq = getfrequency(nums);
+  let vals = Object.values(freq);
+
+  for (let f of vals) {
+    if (isPrime(f)) {
+      return true;
+    }
+  }
+  return false;
+};
