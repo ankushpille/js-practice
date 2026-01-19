@@ -175,3 +175,23 @@ var arrangeCoins = function (totalMoney) {
 var findDelayedArrivalTime = function (arrivalTime, delayedTime) {
   return (arrivalTime + delayedTime) % 24;
 };
+
+function getSumAndProductDigit(n) {
+  let sod = 0;
+  let pod = 1;
+
+  while (n) {
+    let lastDigit = n % 10;
+    sod = sod + lastDigit;
+    pod = pod * lastDigit;
+    n = Math.trunc(n / 10);
+  }
+
+  return { sod, pod };
+}
+
+var checkDivisibility = function (n) {
+  let { sod, pod } = getSumAndProductDigit(n);
+  let sum = sod + pod;
+  return n % sum === 0;
+};
