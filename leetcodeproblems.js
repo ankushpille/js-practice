@@ -231,3 +231,24 @@ var checkPrimeFrequency = function (nums) {
   }
   return false;
 };
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isFascinating = function (n) {
+  let s = "" + n + 2 * n + 3 * n;
+
+  if (s.includes("0")) {
+    return false;
+  }
+
+  for (let i = 1; i <= 9; i++) {
+    if (!s.includes("" + i)) {
+      return false;
+    }
+
+    let set = new Set(s);
+    return set.size === s.length;
+  }
+};
