@@ -252,3 +252,41 @@ var isFascinating = function (n) {
     return set.size === s.length;
   }
 };
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+
+var sumAndMultiply = function (n) {
+  let s = "" + n;
+  let t = "";
+
+  for (let ch of s) {
+    if (!ch.includes("0")) {
+      t = t + ch;
+    }
+  }
+
+  if (t === "") {
+    t = "0";
+  }
+
+  let x = +t;
+  let { sod } = getSumAndProductDigit(x);
+  return x * sod;
+};
+
+function getSumAndProductDigit(n) {
+  let sod = 0;
+  let pod = 1;
+
+  while (n) {
+    let lastDigit = n % 10;
+    sod = sod + lastDigit;
+    pod = pod * lastDigit;
+    n = Math.trunc(n / 10);
+  }
+
+  return { sod, pod };
+}
