@@ -159,3 +159,15 @@ var averageValue = function (nums) {
   let average = sum / count;
   return Math.trunc(average);
 };
+
+var arrangeCoins = function (totalMoney) {
+  let sum = 0;
+
+  for (let d = 1; ; d++) {
+    sum += d;
+
+    if (sum > totalMoney) {
+      return d - 1;
+    }
+  }
+};
