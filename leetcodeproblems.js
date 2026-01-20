@@ -290,3 +290,25 @@ function getSumAndProductDigit(n) {
 
   return { sod, pod };
 }
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxPower = function (s) {
+  let n = s.length;
+  let maxLen = 0;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j <= n; j++) {
+      let ss = s.slice(i, j);
+      let set = new Set(ss);
+
+      if (set.size == 1) {
+        maxLen = Math.max(maxLen, ss.length);
+      } else {
+        break;
+      }
+    }
+  }
+  return maxLen;
+};
