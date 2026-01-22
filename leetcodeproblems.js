@@ -388,3 +388,37 @@ var countOddsTLE = function (low, high) {
 
   return numOfOdds;
 };
+
+const gcd = (a, b) => {
+  if (b === 0) return a;
+  return gcd(b, a % b);
+};
+
+var gcdOfOddEvenSums = function (n) {
+  let sumOfOdds = 0;
+  let sumOfEvens = 0;
+
+  let odd = 1;
+  let even = 2;
+  for (let count = 1; count <= n; count++) {
+    sumOfOdds += odd;
+    sumOfEvens += even;
+
+    odd += 2;
+    even += 2;
+  }
+
+  return gcd(sumOfOdds, sumOfEvens);
+};
+
+var gcdOfOddEvenSums22222 = function (n) {
+  let sumOfOdds = 0;
+  let sumOfEvens = 0;
+
+  for (let count = 1; count <= n; count++) {
+    sumOfOdds += 2 * count - 1;
+    sumOfEvens += 2 * count;
+  }
+
+  return gcd(sumOfOdds, sumOfEvens);
+};
