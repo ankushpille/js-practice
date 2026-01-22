@@ -312,3 +312,23 @@ var maxPower = function (s) {
   }
   return maxLen;
 };
+
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+function hasZero(num) {
+  let s = "" + num;
+  return s.includes("0");
+}
+
+var getNoZeroIntegers = function (n) {
+  for (let a = 1; a < n; a++) {
+    if (!hasZero(a)) {
+      let b = n - a;
+      if (!hasZero(b)) {
+        return [a, b];
+      }
+    }
+  }
+};
