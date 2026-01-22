@@ -332,3 +332,59 @@ var getNoZeroIntegers = function (n) {
     }
   }
 };
+
+var countOdds = function (low, high) {
+  // if low is even (4)
+  if (low % 2 === 0) {
+    low++; // 5
+  }
+  // low is odd (5)
+
+  // if high is even (14)
+  if (high % 2 === 0) {
+    high--; // 13
+  }
+  // low is odd (13)
+
+  // impossible case
+  if (low > high) {
+    return 0;
+  }
+
+  // both low and high are odds
+  let numOfElementsBetween = high - low + 1;
+  let half = numOfElementsBetween / 2;
+
+  let numOfEvens = Math.floor(half);
+  let numOfOdds = Math.ceil(half);
+
+  return numOfOdds;
+};
+
+var countOdds2222222 = function (low, high) {
+  let numOfOdds = 0;
+
+  // if low is even (4)
+  if (low % 2 === 0) {
+    low++; // 5
+  }
+
+  // low is odd (5), jump +2 => all odd numbers
+  for (let i = low; i <= high; i += 2) {
+    numOfOdds++;
+  }
+
+  return numOfOdds;
+};
+
+var countOddsTLE = function (low, high) {
+  let numOfOdds = 0;
+
+  for (let i = low; i <= high; i++) {
+    if (i % 2 === 1) {
+      numOfOdds++;
+    }
+  }
+
+  return numOfOdds;
+};
