@@ -422,3 +422,88 @@ var gcdOfOddEvenSums22222 = function (n) {
 
   return gcd(sumOfOdds, sumOfEvens);
 };
+
+var isPalindrome = function (x, options = {}) {
+  const { ignoreCase = true, ignoreNonAlphanumeric = true } = options;
+
+  // Convert to string
+  let str = String(x);
+
+  // Preprocess the string
+  if (ignoreNonAlphanumeric) {
+    str = str.replace(/[^a-zA-Z0-9]/g, "");
+  }
+  if (ignoreCase) {
+    str = str.toLowerCase();
+  }
+
+  // Check if string reads the same forwards and backwards
+  let left = 0;
+  let right = str.length - 1;
+
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+
+  return true;
+};
+
+var isPalindromeNumber = function (x) {
+  // Negative numbers are not palindromes
+  if (x < 0) return false;
+
+  let original = x;
+  let reversed = 0;
+
+  while (x > 0) {
+    const digit = x % 10;
+    reversed = reversed * 10 + digit;
+    x = Math.floor(x / 10);
+  }
+
+  return original === reversed;
+};
+
+var isPalindromeRecursive = function (str, options = {}) {
+  const { ignoreCase = true, ignoreNonAlphanumeric = true } = options;
+
+  // Preprocess
+  let processed = String(str);
+  if (ignoreNonAlphanumeric) {
+    processed = processed.replace(/[^a-zA-Z0-9]/g, "");
+  }
+  if (ignoreCase) {
+    processed = processed.toLowerCase();
+  }
+
+  // Base cases
+  if (processed.length <= 1) return true;
+
+  // Check first and last characters
+  if (processed[0] !== processed[processed.length - 1]) {
+    return false;
+  }
+
+  // Recursive check on substring
+  return isPalindromeRecursive(processed.slice(1, -1), {
+    ignoreCase: false,
+    ignoreNonAlphanumeric: false,
+  });
+};
+
+// Test cases
+console.log("--- Palindrome Check Test Cases ---");
+console.log(
+  "isPalindrome('A man, a plan, a canal: Panama'):",
+  isPalindrome("A man, a plan, a canal: Panama"),
+); // true
+console.log("isPalindrome('race a car'):", isPalindrome("race a car")); // false
+console.log("isPalindrome(121):", isPalindrome(121)); // true
+console.log("isPalindrome(-121):", isPalindrome(-121)); // false (due to negative sign)
+console.log("isPalindromeNumber(121):", isPalindromeNumber(121)); // true
+console.log("isPalindromeNumber(-121):", isPalindromeNumber(-121)); // false
+console.log("isPalindromeRecursive('madam'):", isPalindromeRecursive("madam")); // true
