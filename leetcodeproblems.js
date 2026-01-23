@@ -507,3 +507,22 @@ console.log("isPalindrome(-121):", isPalindrome(-121)); // false (due to negativ
 console.log("isPalindromeNumber(121):", isPalindromeNumber(121)); // true
 console.log("isPalindromeNumber(-121):", isPalindromeNumber(-121)); // false
 console.log("isPalindromeRecursive('madam'):", isPalindromeRecursive("madam")); // true
+
+var majorityElement = function (nums) {
+  let n = nums.length;
+  let third = n / 3;
+
+  let freq = {};
+  for (let e of nums) {
+    freq[e] = (freq[e] ?? 0) + 1;
+  }
+
+  let res = [];
+
+  for (let [e, count] of Object.entries(freq)) {
+    if (count > third) {
+      res.push(+e);
+    }
+  }
+  return res;
+};
