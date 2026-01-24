@@ -526,3 +526,12 @@ var majorityElement = function (nums) {
   }
   return res;
 };
+
+var maxKDistinct = function (a, k) {
+  let set = new Set(a);
+  a = [...set];
+
+  a.sort((a, b) => b - a);
+
+  return a.slice(0, k);
+};
