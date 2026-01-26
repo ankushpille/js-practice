@@ -666,3 +666,35 @@ var maxProduct = function (s) {
   digits.sort((a, b) => b - a);
   return digits[0] * digits[1];
 };
+
+var arraySign = function (nums) {
+  let negativeele = 0;
+
+  for (let e of nums) {
+    if (e === 0) {
+      return 0;
+    }
+    if (e < 0) {
+      negativeele = negativeele + 1;
+    }
+  }
+  let isprodpos = negativeele % 2 === 0 ? 1 : -1;
+  return isprodpos;
+};
+
+var arraySign222 = function (nums) {
+  function signfunc(a) {
+    console.log({ a });
+    if (a < 0) {
+      return -1;
+    }
+    if (a > 0) {
+      return 1;
+    }
+    if (a === 0) {
+      return 0;
+    }
+  }
+  let prod = nums.reduce((prod, e) => prod * e, 1);
+  return signfunc(prod);
+};
