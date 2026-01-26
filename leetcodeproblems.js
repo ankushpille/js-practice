@@ -698,3 +698,27 @@ var arraySign222 = function (nums) {
   let prod = nums.reduce((prod, e) => prod * e, 1);
   return signfunc(prod);
 };
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+function getmean(a) {
+  let n = a.length;
+  let total = a.reduce((sum, e) => sum + e, 0);
+  return total / n;
+}
+
+var trimMean = function (arr) {
+  let n = arr.length;
+  arr.sort((a, b) => a - b);
+
+  let fivepercentnumbers = (5 / 100) * n;
+  while (fivepercentnumbers--) {
+    arr.shift();
+    arr.pop();
+  }
+
+  let res = getmean(arr);
+  return res;
+};
