@@ -615,3 +615,26 @@ var arraySign222 = function (a) {
   let prod = a.reduce((product, e) => product * e, 1);
   return signFunc(prod);
 };
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var findValidPair = function (s) {
+  let n = s.length;
+  let freq = {};
+
+  for (let e of s) {
+    freq[e] = (freq[e] ?? 0) + 1;
+  }
+
+  for (let i = 0; i + 1 < n; i++) {
+    let e = s[i];
+    let next = s[i + 1];
+    if (e !== next && freq[e] === +e && freq[next] === +next) {
+      return e + next;
+    }
+  }
+
+  return "";
+};
