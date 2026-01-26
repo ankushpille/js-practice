@@ -659,3 +659,10 @@ var maxDifference = function (s) {
   let maxDiff = oddfreq - evenfreq;
   return maxDiff;
 };
+
+var maxProduct = function (s) {
+  let n = "" + s;
+  let digits = n.split("").map((ch) => +ch);
+  digits.sort((a, b) => b - a);
+  return digits[0] * digits[1];
+};
