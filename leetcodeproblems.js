@@ -638,3 +638,24 @@ var findValidPair = function (s) {
 
   return "";
 };
+
+var maxDifference = function (s) {
+  let freq = {};
+  for (let e of s) {
+    freq[e] = (freq[e] ?? 0) + 1;
+  }
+
+  let evenfreq = Infinity;
+  let oddfreq = -Infinity;
+
+  for (let [e, count] of Object.entries(freq)) {
+    if (count % 2 === 0) {
+      evenfreq = Math.min(evenfreq, count);
+    } else {
+      oddfreq = Math.max(oddfreq, count);
+    }
+  }
+
+  let maxDiff = oddfreq - evenfreq;
+  return maxDiff;
+};
