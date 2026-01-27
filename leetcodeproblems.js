@@ -754,3 +754,13 @@ var threeConsecutiveOdds = function (arr) {
 
   return false;
 };
+
+var isThree = function (n) {
+  let noofdivisors = 0;
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      noofdivisors++;
+    }
+  }
+  return noofdivisors === 3;
+};
