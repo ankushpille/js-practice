@@ -722,3 +722,23 @@ var trimMean = function (arr) {
   let res = getmean(arr);
   return res;
 };
+
+function getSumProductDigitsOfDigits(n) {
+  let sod = 0;
+  let pod = 1;
+  while (n) {
+    let lastDigit = n % 10;
+    pod = pod * lastDigit;
+    n = Math.trunc(n / 10);
+  }
+  return { sod, pod };
+}
+
+var smallestNumber = function (n, t) {
+  for (let i = n; ; i++) {
+    let { pod } = getSumProductDigitsOfDigits(i);
+    if (pod % t === 0) {
+      return i;
+    }
+  }
+};
