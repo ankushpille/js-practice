@@ -742,3 +742,15 @@ var smallestNumber = function (n, t) {
     }
   }
 };
+
+var threeConsecutiveOdds = function (arr) {
+  let n = arr.length;
+
+  for (let i = 0; i + 2 < n; i++) {
+    if (arr[i] % 2 === 1 && arr[i + 1] % 2 === 1 && arr[i + 2] % 2 === 1) {
+      return true;
+    }
+  }
+
+  return false;
+};
