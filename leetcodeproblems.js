@@ -814,3 +814,53 @@ var tribonacci22 = function (n) {
 
   return next;
 };
+
+var tribonacci = function (n) {
+  let f = 0;
+  if (n === 0) return f;
+  n--;
+
+  let s = 1;
+  if (n === 0) return s;
+  n--;
+
+  let t = 1;
+  if (n === 0) return t;
+
+  let next;
+
+  while (n--) {
+    next = f + s + t;
+
+    f = s;
+    s = t;
+    t = next;
+  }
+
+  return next;
+};
+
+var tribonacci22 = function (n) {
+  let f = 0;
+  if (n === 0) return f;
+
+  let s = 1;
+  if (n === 1) return s;
+
+  let t = 1;
+  if (n === 2) return t;
+
+  n = n - 2;
+
+  let next;
+
+  while (n--) {
+    next = f + s + t;
+
+    f = s;
+    s = t;
+    t = next;
+  }
+
+  return next;
+};
