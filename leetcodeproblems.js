@@ -913,3 +913,26 @@ class Stack_ {
     console.log(this.arr);
   }
 }
+
+var removeOuterParentheses = function (s) {
+  let stack = new Stack_();
+  let runningS = "";
+  let res = "";
+
+  for (let ch of s) {
+    runningS += ch;
+
+    if (ch === "(") {
+      stack.push(ch);
+    } else if (ch === ")") {
+      stack.pop();
+
+      if (stack.isEmpty()) {
+        res += runningS.slice(1, -1);
+        runningS = "";
+      }
+    }
+  }
+
+  return res;
+};
