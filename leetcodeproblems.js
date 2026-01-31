@@ -866,26 +866,50 @@ var tribonacci22 = function (n) {
 };
 
 //how to write stack
-class Stack {
-  constructor() {
-    this.items = [];
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxDepth = function (s) {
+  let stack = new Stack_();
+  let maxSize = 0;
+
+  for (let e of s) {
+    if (e === "(") {
+      stack.push(e);
+      maxSize = Math.max(maxSize, stack.size());
+    } else if (e === ")") {
+      stack.pop();
+    }
   }
-  push(element) {
-    this.items.push(element);
+  return maxSize;
+};
+
+class Stack_ {
+  arr = [];
+
+  push(item) {
+    this.arr.push(item);
   }
   pop() {
-    this.items.pop();
+    return this.arr.pop();
   }
-  peek() {
-    return this.items[this.items.length - 1];
-  }
-  isEmpty() {
-    return this.items.length === 0;
+  top() {
+    return this.arr.at(-1);
   }
   size() {
-    return this.items.length;
+    return this.arr.length;
   }
-  printStack() {
-    console.log(this.items.toString());
+  isEmpty() {
+    return this.arr.length === 0;
+  }
+  clear() {
+    this.arr = [];
+  }
+  toArray() {
+    return this.arr;
+  }
+  print() {
+    console.log(this.arr);
   }
 }
