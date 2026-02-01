@@ -936,3 +936,28 @@ var removeOuterParentheses = function (s) {
 
   return res;
 };
+
+
+var reversePrefix = function (word, ch) {
+    let stack = new Stack_()
+    let targetFound = false;
+    let i = 0;
+
+    for (let char of word) {
+        stack.push(char);
+        i++;
+
+        if (char === ch) {
+            targetFound = true;
+            break;
+        }
+    }
+    if (targetFound === false) {
+        return word;
+    }
+    let res = ''
+    while (!stack.isEmpty()) {
+        res = res + stack.pop();
+    }
+    return res + word.slice(i)
+};
