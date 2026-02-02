@@ -937,27 +937,54 @@ var removeOuterParentheses = function (s) {
   return res;
 };
 
-
 var reversePrefix = function (word, ch) {
-    let stack = new Stack_()
-    let targetFound = false;
-    let i = 0;
+  let stack = new Stack_();
+  let targetFound = false;
+  let i = 0;
 
-    for (let char of word) {
-        stack.push(char);
-        i++;
+  for (let char of word) {
+    stack.push(char);
+    i++;
 
-        if (char === ch) {
-            targetFound = true;
-            break;
-        }
+    if (char === ch) {
+      targetFound = true;
+      break;
     }
-    if (targetFound === false) {
-        return word;
+  }
+  if (targetFound === false) {
+    return word;
+  }
+  let res = "";
+  while (!stack.isEmpty()) {
+    res = res + stack.pop();
+  }
+  return res + word.slice(i);
+};
+
+var isValid = function (s) {
+  let stack = new Stack_();
+
+  for (let char of s) {
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      if (stack.isEmpty()) {
+        return false;
+      }
+
+      let top = stack.top();
+
+      if (
+        (char === ")" && top !== "(") ||
+        (char === "]" && top !== "[") ||
+        (char === "}" && top !== "{")
+      ) {
+        return false;
+      }
+
+      stack.pop();
     }
-    let res = ''
-    while (!stack.isEmpty()) {
-        res = res + stack.pop();
-    }
-    return res + word.slice(i)
+  }
+
+  return stack.isEmpty();
 };
