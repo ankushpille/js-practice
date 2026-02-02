@@ -988,3 +988,31 @@ var isValid = function (s) {
 
   return stack.isEmpty();
 };
+
+class Queue_ {
+  arr = [];
+  enqueue(item) {
+    this.arr.push(item);
+  }
+  dequeue() {
+    return this.arr.shift();
+  }
+  front() {
+    return this.arr[0];
+  }
+  size() {
+    return this.arr.length;
+  }
+  isEmpty() {
+    return this.arr.length === 0;
+  }
+  clear() {
+    this.arr = [];
+  }
+  toArray() {
+    return this.arr;
+  }
+  print() {
+    console.log(this.arr);
+  }
+}
