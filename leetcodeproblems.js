@@ -1021,16 +1021,23 @@ class Queue_ {
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
-     let min=prices[0];
-     let maxprofit = 0;
-     for(let i=1; i<prices.length; i++){
-        if(prices[i]-min > maxprofit){
-            maxprofit = prices[i] - min
-        }
-        if(prices[i] < min){
-            min = prices[i]
-        }
-     }
-     return maxprofit;
+var maxProfit = function (prices) {
+  let min = prices[0];
+  let maxprofit = 0;
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] - min > maxprofit) {
+      maxprofit = prices[i] - min;
+    }
+    if (prices[i] < min) {
+      min = prices[i];
+    }
+  }
+  return maxprofit;
 };
+
+let arr = [1, 2, 3, 4, 5];
+
+let max = -Infinity;
+for (let e of arr) {
+  max = Math.max(max, e);
+}
