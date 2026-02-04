@@ -1041,3 +1041,18 @@ let max = -Infinity;
 for (let e of arr) {
   max = Math.max(max, e);
 }
+
+//second largest
+let first = -Infinity;
+let second = -Infinity;
+
+for (let e of arr) {
+  if (e > first) {
+    second = first;
+    first = e;
+  } else if (e > second && e < first) {
+    second = e;
+  }
+}
+
+console.log({ second });
