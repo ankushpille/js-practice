@@ -1056,3 +1056,36 @@ for (let e of arr) {
 }
 
 console.log({ second });
+
+
+function getsumproductsdigits(n) {
+    let sod = 0;
+    let pod = 1;
+    let digits = []
+
+    while (n > 0) {
+        let lastdigit = n % 10;
+        digits.push(lastdigit);
+        sod = sod + lastdigit;
+        n = Math.trunc(n / 10);
+    }
+    return { sod, pod, digits };
+}
+var splitNum = function (num) {
+
+    let { digits } = getsumproductsdigits(num)
+    digits.sort((a, b) => a - b);
+
+    let num1 = ''
+    let num2 = ''
+    digits.forEach((e, i) => {
+
+        if (i % 2 === 0) {
+            num1 = num1 + e
+        } else {
+            num2 = num2 + e
+        }
+
+    })
+    return +num1 + +num2;
+};
