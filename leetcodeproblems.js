@@ -1057,35 +1057,88 @@ for (let e of arr) {
 
 console.log({ second });
 
-
 function getsumproductsdigits(n) {
-    let sod = 0;
-    let pod = 1;
-    let digits = []
+  let sod = 0;
+  let pod = 1;
+  let digits = [];
 
-    while (n > 0) {
-        let lastdigit = n % 10;
-        digits.push(lastdigit);
-        sod = sod + lastdigit;
-        n = Math.trunc(n / 10);
-    }
-    return { sod, pod, digits };
+  while (n > 0) {
+    let lastdigit = n % 10;
+    digits.push(lastdigit);
+    sod = sod + lastdigit;
+    n = Math.trunc(n / 10);
+  }
+  return { sod, pod, digits };
 }
 var splitNum = function (num) {
+  let { digits } = getsumproductsdigits(num);
+  digits.sort((a, b) => a - b);
 
-    let { digits } = getsumproductsdigits(num)
-    digits.sort((a, b) => a - b);
-
-    let num1 = ''
-    let num2 = ''
-    digits.forEach((e, i) => {
-
-        if (i % 2 === 0) {
-            num1 = num1 + e
-        } else {
-            num2 = num2 + e
-        }
-
-    })
-    return +num1 + +num2;
+  let num1 = "";
+  let num2 = "";
+  digits.forEach((e, i) => {
+    if (i % 2 === 0) {
+      num1 = num1 + e;
+    } else {
+      num2 = num2 + e;
+    }
+  });
+  return +num1 + +num2;
 };
+
+var isValid = function (s) {
+  let stack = new Stack_();
+
+  for (let char of s) {
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      if (stack.isEmpty()) {
+        return false;
+      }
+
+      let top = stack.top();
+
+      if (
+        (char === ")" && top !== "(") ||
+        (char === "]" && top !== "[") ||
+        (char === "}" && top !== "{")
+      ) {
+        return false;
+      }
+
+      stack.pop();
+    }
+  }
+
+  return stack.isEmpty();
+};
+
+class Stack_ {
+  arr = [];
+
+  push(item) {
+    this.arr.push(item);
+  }
+  pop() {
+    return this.arr.pop();
+  }
+  top() {
+    return this.arr.at(-1);
+  }
+  size() {
+    return this.arr.length;
+  }
+  isEmpty() {
+    return this.arr.length === 0;
+  }
+  clear() {
+    this.arr = [];
+  }
+  toArray() {
+    return this.arr;
+  }
+  print() {
+    console.log(this.arr);
+  }
+}
