@@ -1154,3 +1154,13 @@ for (let i = 0; i < 10; i++) {
 
   console.log(i);
 }
+
+const person = {
+  name: "alice",
+};
+
+function showAge(age) {
+  console.log(`${this.name} is ${age} years old`);
+}
+
+showAge.call(person, 18);
