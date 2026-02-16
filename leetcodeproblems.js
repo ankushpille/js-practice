@@ -1164,3 +1164,5 @@ function showAge(age) {
 }
 
 showAge.call(person, 18);
+let age = showAge.bind(person, 19);
+age();
