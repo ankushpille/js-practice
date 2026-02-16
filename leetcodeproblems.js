@@ -1166,3 +1166,7 @@ function showAge(age) {
 showAge.call(person, 18);
 let age = showAge.bind(person, 19);
 age();
+
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 0);
+}
