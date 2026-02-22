@@ -1182,3 +1182,11 @@ var singleNumber = function (nums) {
 for (let i = 0; i <= 10; i++) {
   setTimeout(() => console.log(i), 0);
 }
+
+const arr = [2, 5, 8, 10];
+
+const result = arr.map((num) => {
+  return num * 2;
+});
+
+console.log(result);
