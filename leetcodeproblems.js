@@ -1190,3 +1190,11 @@ const result = arr.map((num) => {
 });
 
 console.log(result);
+
+arr = [5, 2, 3, 4, 5];
+
+result = arr.reduce((acc, cum) => {
+  return (acc = acc + cum);
+}, 0);
+
+console.log("result", result);
