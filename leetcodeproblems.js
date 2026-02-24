@@ -1198,3 +1198,11 @@ result = arr.reduce((acc, cum) => {
 }, 0);
 
 console.log("result", result);
+
+arr = [6, 4, 8, 10];
+
+result = arr.reduce((acc, cum) => {
+  return (acc = acc * cum);
+}, 1);
+
+console.log("result", result);
