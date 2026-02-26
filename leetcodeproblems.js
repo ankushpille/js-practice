@@ -1206,3 +1206,12 @@ result = arr.reduce((acc, cum) => {
 }, 1);
 
 console.log("result", result);
+
+// function currying
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+
+console.log(add(2));
