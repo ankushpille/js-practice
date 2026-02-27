@@ -1215,3 +1215,30 @@ function add(a) {
 }
 
 console.log(add(2));
+
+var maximumOddBinaryNumber = function (s) {
+  let n = s.length;
+
+  let zc = 0; // zero count
+  let oc = 0;
+
+  for (let ch of s) {
+    if (ch === "0") {
+      zc++;
+    } else {
+      oc++;
+    }
+  }
+  oc--; // for last 1
+
+  let res = "";
+  while (oc--) {
+    res += "1";
+  }
+  while (zc--) {
+    res += "0";
+  }
+  res += "1"; // last 1
+
+  return res;
+};
