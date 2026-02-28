@@ -1242,3 +1242,36 @@ var maximumOddBinaryNumber = function (s) {
 
   return res;
 };
+
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+function gcd(a, b) {
+
+    if (b === 0) {
+        return a;
+    }
+
+    return gcd(b, a % b);
+}
+
+var gcdOfOddEvenSums = function (n) {
+    let sod = 0;
+    let soe = 0;
+
+    let odd = 1;
+    let even = 2;
+
+    for (let count = 1; count <= n; count++) {
+        sod = sod + odd;
+        soe = soe + even;
+
+        odd = odd + 2;
+        even = even + 2;
+    }
+
+    return gcd(sod, soe);
+
+};
