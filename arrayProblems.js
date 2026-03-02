@@ -27,3 +27,7 @@ for(let i=0; i<arr.length; i++){
 }
 
 console.log("sum",sum)
+
+for(let i=0; i<10; i++){
+    console.log(i)
+}
