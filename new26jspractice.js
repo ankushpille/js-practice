@@ -30,3 +30,18 @@ promise
   .catch((error) => {
     console.error(error);
   });
+
+//async await example
+async function fetchData() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts/1",
+    );
+    const data = await response.json();
+    console.log(data); // Output: { userId: 1, id: 1, title: "...", body: "..." }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+fetchData();
