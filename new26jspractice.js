@@ -62,3 +62,18 @@ function greet1(name = "guest") {
 }
 greet1(); // Output: "Hello, guest!"
 greet1("Bob"); // Output: "Hello, Bob!"
+
+//debounce example
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+const handleResize = debounce(() => {
+  console.log("Window resized");
+}, 500);
+window.addEventListener("resize", handleResize);
