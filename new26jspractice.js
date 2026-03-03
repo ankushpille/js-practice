@@ -16,3 +16,17 @@ console.log("let b:", b); // Output: 20
 const c = 10;
 console.log(c); // Output: 10
 // c = 20; //this will throw an error
+
+const promise = new promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved after 2 seconds");
+  }, 2000);
+});
+
+promise
+  .then((message) => {
+    console.log(message); // Output: "Promise resolved after 2 seconds"
+  })
+  .catch((error) => {
+    console.error(error);
+  });
