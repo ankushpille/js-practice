@@ -45,3 +45,7 @@ async function fetchData() {
 }
 
 fetchData();
+
+//arrow function example
+const add = (x, y) => x + y;
+console.log(add(5, 3)); // Output: 8
