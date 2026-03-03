@@ -49,3 +49,16 @@ fetchData();
 //arrow function example
 const add = (x, y) => x + y;
 console.log(add(5, 3)); // Output: 8
+
+//default parameters example
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}!`);
+}
+greet(); // Output: "Hello, Guest!"
+greet("Alice"); // Output: "Hello, Alice!"
+
+function greet1(name = "guest") {
+  console.log(`Hello, ${name}!`);
+}
+greet1(); // Output: "Hello, guest!"
+greet1("Bob"); // Output: "Hello, Bob!"
