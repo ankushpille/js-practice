@@ -1243,67 +1243,75 @@ var maximumOddBinaryNumber = function (s) {
   return res;
 };
 
-
 /**
  * @param {number} n
  * @return {number}
  */
 function gcd(a, b) {
+  if (b === 0) {
+    return a;
+  }
 
-    if (b === 0) {
-        return a;
-    }
-
-    return gcd(b, a % b);
+  return gcd(b, a % b);
 }
 
 var gcdOfOddEvenSums = function (n) {
-    let sod = 0;
-    let soe = 0;
+  let sod = 0;
+  let soe = 0;
 
-    let odd = 1;
-    let even = 2;
+  let odd = 1;
+  let even = 2;
 
-    for (let count = 1; count <= n; count++) {
-        sod = sod + odd;
-        soe = soe + even;
+  for (let count = 1; count <= n; count++) {
+    sod = sod + odd;
+    soe = soe + even;
 
-        odd = odd + 2;
-        even = even + 2;
-    }
+    odd = odd + 2;
+    even = even + 2;
+  }
 
-    return gcd(sod, soe);
-
+  return gcd(sod, soe);
 };
 
 function getsumproductsdigits(n) {
-    let sod = 0;
-    let pod = 1;
-    let digits = []
+  let sod = 0;
+  let pod = 1;
+  let digits = [];
 
-    while (n > 0) {
-        let lastdigit = n % 10;
-        digits.push(lastdigit);
-        sod = sod + lastdigit;
-        n = Math.trunc(n / 10);
-    }
-    return { sod, pod, digits };
+  while (n > 0) {
+    let lastdigit = n % 10;
+    digits.push(lastdigit);
+    sod = sod + lastdigit;
+    n = Math.trunc(n / 10);
+  }
+  return { sod, pod, digits };
 }
 var splitNum = function (num) {
+  let { digits } = getsumproductsdigits(num);
+  digits.sort((a, b) => a - b);
 
-    let { digits } = getsumproductsdigits(num)
-    digits.sort((a, b) => a - b);
-
-    let num1 = ''
-    let num2 = ''
-    digits.forEach((e, i) => {
-
-        if (i % 2 === 0) {
-            num1 = num1 + e
-        } else {
-            num2 = num2 + e
-        }
-
-    })
-    return +num1 + +num2;
+  let num1 = "";
+  let num2 = "";
+  digits.forEach((e, i) => {
+    if (i % 2 === 0) {
+      num1 = num1 + e;
+    } else {
+      num2 = num2 + e;
+    }
+  });
+  return +num1 + +num2;
 };
+
+function outerfunction() {
+  let count = 0;
+  function innerfunction() {
+    count++;
+    console.log(count);
+  }
+  return innerfunction;
+}
+
+let counter = outerfunction();
+counter();
+counter();
+counter();
