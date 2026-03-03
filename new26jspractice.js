@@ -17,7 +17,7 @@ const c = 10;
 console.log(c); // Output: 10
 // c = 20; //this will throw an error
 
-const promise = new promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Promise resolved after 2 seconds");
   }, 2000);
