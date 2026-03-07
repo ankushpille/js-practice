@@ -77,3 +77,30 @@ const handleResize = debounce(() => {
   console.log("Window resized");
 }, 500);
 window.addEventListener("resize", handleResize);
+
+//throttle example
+function throttle(func, limit) {
+  let lastFunc;
+  let lastRan;
+  return function (...args) {
+    if (!lastRan) {
+      func.apply(this, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(
+        () => {
+          if (Date.now() - lastRan >= limit) {
+            func.apply(this, args);
+            lastRan = Date.now();
+          }
+        },
+        limit - (Date.now() - lastRan),
+      );
+    }
+  };
+}
+const handleScroll = throttle(() => {
+  console.log("Window scrolled");
+}, 1000);
+window.addEventListener("scroll", handleScroll);
