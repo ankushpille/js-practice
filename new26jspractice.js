@@ -104,3 +104,16 @@ const handleScroll = throttle(() => {
   console.log("Window scrolled");
 }, 1000);
 window.addEventListener("scroll", handleScroll);
+
+//closure example
+function outerFunction() {
+  let count = 0;
+  return function innerFunction() {
+    count++;
+    console.log(`Count: ${count}`);
+  };
+}
+const counter = outerFunction();
+counter(); // Output: "Count: 1"
+counter();
+counter(); // Output: "Count: 3"
