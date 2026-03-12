@@ -128,3 +128,20 @@ Person.prototype.greet = function () {
 };
 const person1 = new Person("Alice", 30);
 person1.greet(); // Output: "Hello, my name is Alice and I am 30 years old."
+
+//class example
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+const dog1 = new Dog("Buddy");
+dog1.speak(); // Output: "Buddy barks."
