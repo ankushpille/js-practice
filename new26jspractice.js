@@ -145,3 +145,16 @@ class Dog extends Animal {
 }
 const dog1 = new Dog("Buddy");
 dog1.speak(); // Output: "Buddy barks."
+
+// module example
+// In a separate file named 'math.js'
+export function add(x, y) {
+  return x + y;
+}
+export function subtract(x, y) {
+  return x - y;
+}
+// In the main file
+import { add, subtract } from "./math.js";
+console.log(add(5, 3));
+console.log(subtract(5, 3));
