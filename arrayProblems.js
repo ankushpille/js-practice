@@ -35,3 +35,7 @@ for(let i=0; i<10; i++){
 for(let i=0; i<arr.length;i++){
     console.log("ankush",i)
 }
+let arr2 = [22,33,44,55]
+let sum1 = arr2[0] + arr2[1]
+
+console.log(sum1);
