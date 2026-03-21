@@ -39,3 +39,13 @@ let arr2 = [22,33,44,55]
 let sum1 = arr2[0] + arr2[1]
 
 console.log(sum1);
+
+let age = 18;
+
+if(age< 18){
+    console.log("your not eligible for vote")
+}else if(age<=18){
+    console.log("your just 18 now your elgible for vote")
+}else{
+    console.log("your elgible to vote")
+}
