@@ -49,3 +49,9 @@ if(age< 18){
 }else{
     console.log("your elgible to vote")
 }
+
+let arr3 = [5,3,1,2]
+
+let result = arr3.reduce((num) => {
+  return num * 2
+})
