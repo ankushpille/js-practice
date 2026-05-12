@@ -31,3 +31,27 @@ console.log("sum",sum)
 for(let i=0; i<10; i++){
     console.log(i)
 }
+
+for(let i=0; i<arr.length;i++){
+    console.log("ankush",i)
+}
+let arr2 = [22,33,44,55]
+let sum1 = arr2[0] + arr2[1]
+
+console.log(sum1);
+
+let age = 18;
+
+if(age< 18){
+    console.log("your not eligible for vote")
+}else if(age<=18){
+    console.log("your just 18 now your elgible for vote")
+}else{
+    console.log("your elgible to vote")
+}
+
+let arr3 = [5,3,1,2]
+
+let result = arr3.reduce((num) => {
+  return num * 2
+})
